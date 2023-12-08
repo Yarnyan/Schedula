@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-bg-color: #181D1E;
+    --element-bg-color: #2F3336;
+}
+
 input,
 button {
     border: 0;
@@ -26,7 +31,7 @@ body {
     position: relative;
     min-height: 100vh;
     width: 100%;
-    background-color: #181D1E;
+    background-color: var(--main-bg-color);
     color: #fff;
 }
 
@@ -90,7 +95,7 @@ body {
     min-height: 100vh;
     position: absolute;
     z-index: 5;
-    background-color: #181D1E;
+    background-color: var(--main-bg-color);
     top: 0;
     left: 0;
     width: 100%;
@@ -178,20 +183,18 @@ body {
 
 /* Patients */
 
-.Patients__container {
+.Patients__container,
+.Reception__container {
     position: relative;
     min-height: 100vh;
-    background-color: #181D1E;
+    background-color: var(--main-bg-color);
     width: 100%;
     color: #fff;
 }
 
-.Patients__container-content {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-.Patients__content-header {
+.Patients__content-header,
+.Doctor__content-header,
+.Reception__content-header {
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -199,10 +202,13 @@ body {
     height: 7vh;
 }
 
-.Patients__content-body {
+.Patients__content-body,
+.Doctor__content-body {
     height: 100%;
     width: 100%;
     padding: 10px;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .Patients__header-item:not(:first-child) {
@@ -225,7 +231,7 @@ body {
 
 
 .Patients__content-item:not(:last-child) {
-    border-bottom: 1px solid #2F3336;
+    border-bottom: 1px solid var(--element-bg-color);
 }
 
 .Patients__content-item {
@@ -297,4 +303,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
+.Add_patients a{
+    color: #c2c0c0;
+}
+
+/* doctor */
+
+.Doctor__container {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    background-color: var(--main-bg-color);
+}
+
+/* Reception */

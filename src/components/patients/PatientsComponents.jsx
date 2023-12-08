@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { slide as Menu } from 'react-burger-menu';
 import Add from '../ui/Add';
+import Burger from '../ui/burger';
 export default function PatientsComponents() {
     const dispatch = useDispatch();
     const PatientsSchedule = useSelector((state) => state.PatientsSchedule);
@@ -170,20 +169,7 @@ export default function PatientsComponents() {
         <div className='Patients__container'>
             <div className="Patients__container-content">
                 <div className="Patients__content-header">
-                    <Menu>
-                        <div className='Patients__header-item'>
-                            <Link id="home" to={`/Расписание`} className="menu-item">Расписание</Link>
-                        </div>
-                        <div className='Patients__header-item'>
-                            <Link id="about" to={`/Никита`} className="menu-item">Никита</Link>
-                        </div>
-                        <div className='Patients__header-item'>
-                            <Link id="contact" to={`/Антоха`} className="menu-item">Антоха</Link>
-                        </div>
-                        <div className='Patients__header-item'>
-                            <Link className="menu-item" to={`/Витек`}>Витек</Link>
-                        </div>
-                    </Menu>
+                    <Burger />
                     <div className="Add_patients">
                         <Add />
                     </div>
